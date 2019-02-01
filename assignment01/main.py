@@ -39,16 +39,16 @@ def read(path):
                 if splitline[3] == 'B':
                     ret.append(splitline)
 
-    #go back and return list of tolkens
+    #go back and return list of tokens
     os.chdir(currPath)
     return ret
 
-def freq(tolkens, dictionary):
-    #Filter tolkens by verbs and see if they match the reporting verbs
-    for tolkenList in tolkens:
-        for tolken in tolkenList:
-            if "_V" in tolken:
-                verbWithTag = tolken
+def freq(tokens, dictionary):
+    #Filter tokens by verbs and see if they match the reporting verbs
+    for tokenList in tokens:
+        for token in tokenList:
+            if "_V" in token:
+                verbWithTag = token
                 verb = verbWithTag.split("_")[0].lower().strip()
                 if verb in dictionary:
                     dictionary[verb] += 1
@@ -85,7 +85,7 @@ def main():
     reportingCoca = getReportingVerbs("reportingverbs.txt")
     reportingStudent = getReportingVerbs("reportingverbs.txt")
 
-    #first, read cocoa in bulk, and get list of tolkens
+    #first, read cocoa in bulk, and get list of tokens
     cocoa_path = "./COCA/sentpos/2009-1"
     cocaTolkens = read(cocoa_path)
 

@@ -8,17 +8,17 @@ COCA Top 20 verbs with count:
 ('noted', 34)
 ('asked', 33)
 ('showed', 32)
-('related', 28)
 ('indicated', 28)
+('related', 28)
 ('determine', 26)
 ('provides', 25)
 ('understand', 24)
-('find', 23)
 ('developed', 23)
-('show', 21)
+('find', 23)
 ('learned', 21)
+('show', 21)
 ('suggests', 21)
-('learn', 19)
+('know', 19)
 
 
 Student data Top 20 verbs with count:
@@ -40,5 +40,5 @@ Student data Top 20 verbs with count:
 ('explains', 27)
 ('understand', 26)
 ('learn', 25)
-('showed', 25)
 ('seem', 25)
+('showed', 25)

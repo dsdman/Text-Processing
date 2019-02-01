@@ -85,17 +85,17 @@ def main():
     reportingCoca = getReportingVerbs("reportingverbs.txt")
     reportingStudent = getReportingVerbs("reportingverbs.txt")
 
-    #first, read cocoa in bulk, and get list of tokens
-    cocoa_path = "./COCA/sentpos/2009-1"
-    cocaTolkens = read(cocoa_path)
+    #first, read coca in bulk, and get list of tokens
+    coca_path = "./COCA/sentpos/2009-1"
+    cocaTokens = read(coca_path)
 
     #next, read student data in bulk, and add that to previous list
     student_path = "./Student"
-    studentTolkens = read(student_path)
+    studentTokens = read(student_path)
 
     #do frequency counts
-    reportingCoca = freq(cocaTolkens, reportingCoca)
-    reportingStudent = freq(studentTolkens, reportingStudent)
+    reportingCoca = freq(cocaTokens, reportingCoca)
+    reportingStudent = freq(studentTokens, reportingStudent)
 
     #get top 20 most frequently used
     cocaTop = getTop(reportingCoca)

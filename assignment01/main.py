@@ -44,14 +44,23 @@ def read(path):
     return ret
 
 def freq(tokens, dictionary):
+    tokenCount = 0
+    freqRatio = 0
+
     #Filter tokens by verbs and see if they match the reporting verbs
     for tokenList in tokens:
         for token in tokenList:
+            tokenCount = tokenCount + 1
             if "_V" in token:
                 verbWithTag = token
                 verb = verbWithTag.split("_")[0].lower().strip()
                 if verb in dictionary:
                     dictionary[verb] += 1
+
+    #normalize the raw count
+    freqRatio = tokenCount / 1000
+    for verb in dictionary:
+        dictionary[verb] = round(dictionary[verb] / freqRatio, 5)
     return dictionary
 
 def getTop(dictionary):

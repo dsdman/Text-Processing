@@ -2,7 +2,7 @@ Dylan Desai
 CSCE 578
 
 ABSTRACT/INTRODUCTION:
-The purpose of this program is to compare two different sets of data, one coming from COCA (Corpus of Contemporary American English) and the other coming from freshman English essays at the University of South Carolina. This is done by providing a count of the top 20 most frequently used reporting verbs (outlined in 'reportingverbs.txt') in both sets of data.
+The purpose of this program is to compare two different sets of data, one coming from COCA (Corpus of Contemporary American English) and the other coming from freshman English essays at the University of South Carolina. This is done by providing a normalized count of the top 20 most frequently used reporting verbs (outlined in 'reportingverbs.txt') in both sets of data.
 
 METHODOLOGY:
 First, the data was contained in two separate zip files; one for the COCA data set and the other for the student data set. Given the COCA data set (RENAMED from 'COCA_ACAD' to 'COCA'), all extraneous data was eliminated except for SENTPOS (RENAMED from 'COCA_acad_wlp_2009sentpos' 'sentpos'). Finally, inside the sentpos directory, everything except for the first 20 files (in directory RENAMED from 'COCA_acad_wlp_2009_00.sentpos' to '2009-1') was removed, leaving only files #4070597-#4070613 and #4070633-#4070635. In the student data set (renamed from 'Data2014sentpos/2014_4_101_400.sentpos' to 'Student'), all 40 files were used, which included both drafts and finals (see RESULTS for possible implications of this).
@@ -10,7 +10,7 @@ First, the data was contained in two separate zip files; one for the COCA data s
 Algorithm:
 1. Read in 'reportingVerbs.txt' and assign the list of verbs to two maps (python dictionaries) containing the verb and counts initialized at 0.
 2. Read each data set individually, tokenizing on blank space whenever encountering a tagged line 'B', output is a list of tokenized text for each data set.
-3. Given the tokens, look for the verb tag ('_V'), strip the tag to just the verb, and see if verb matches a reporting verb in the map. Increment if it does.
+3. Given the tokens, look for the verb tag ('_V'), strip the tag to just the verb, and see if verb matches a reporting verb in the map. Increment if it does. normalize this raw count by 1000.
 4. Filter the maps to just the top 20 most frequently used reporting verbs, contained in a list of tuples ('verb', count).
 5. Write the results of 4 to a file called 'results.txt', keeping formatting minimal (only distinguishing between COCA and STUDENT data sets and adding new lines)
 

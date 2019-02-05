@@ -1,0 +1,19 @@
+ANALYSIS:
+Running the program produced around 150k tokens for the COCA data set and
+around 50k tokens for the student data set. Both data sets had 20 documents in
+it. Also of importance is the fact that the program didn't remove punctuation, 
+which would also increase the overall token count. Overall, the ratio of COCA
+to STUDENT raw data is around 3:1. The program calculated the results given by
+first counting the raw verb counts in both data sets, and then dividing the
+result by total number of tokens normalized by a thousand.
+
+Examining the results reveals a number of differences and similarities. The
+most obvious difference is that the COCA data set tends to use formal diction,
+like "demonstrated", "reported", "determine", and "considered". The student
+data set, by contrast, uses more simple words like "see", "says", "feel", and
+"said". Both data sets use common diction like "found", "showed", or "see".
+
+To conclude, the differences between the COCA and Student data sets give a
+good picture of what kind of writing is done by both groups. From these
+results, it can generally be deduced that the articles
+written in the COCA corpus are more formal than the student essays.

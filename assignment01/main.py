@@ -57,6 +57,7 @@ def freq(tokens, dictionary):
                 if verb in dictionary:
                     dictionary[verb] += 1
 
+    print(tokenCount)
     #normalize the raw count
     freqRatio = tokenCount / 1000
     for verb in dictionary:

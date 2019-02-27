@@ -1,0 +1,79 @@
+INTRODUCTION:
+Firstly, although this program does what was intended given the proposal,
+there is one issue; making sense of the results. This is because the program
+only outputs the word and how each tagger tagged it, but is missing the
+original sentence where that word was used. This means that the context of
+these words are lost, so it's hard to say which part of speech tagger, if any,
+was able to do the better job. Unfortunately, since I did not anticipate this
+problem until it was time to do this analysis, I will have to analyze only
+the words that show up once, and I will only be able to analyze a handful of these.
+
+Another thing to note is that instead of using the COCA data set like
+originally intended, I instead opted for Jack London's White Fang from Project
+Gutenberg. This was done to speed up computation time, but may lead to
+repetitive results since this is only one author.
+
+If I were to do this project again with more time, I would address these two
+issues by finding some way to output the sentence where each differently
+tagged word appears. Additionally, I would increase the data set to include
+maybe up to 20 authors for more varied results.
+
+ANALYSIS:
+With all that out of the way, here are some interesting examples I came across 
+while looking at the results in context, where (word) is the word being analyzed:
+1.  "Grey Beaver had crossed the great (watershed) between Mackenzie and the
+     Yukon in the late winter, and spent the spring in hunting among the western
+     outlying spurs of the Rockies." 
+
+    Here, NLTK identified the word "watershed" as a past tense verb, while
+    stanford correctly identified it as a singular noun.
+
+2.  "He was beaten down to (movelessness) by an overwhelming sense of his
+     own weakness and littleness.  Here was mastery and power, something far
+     and away beyond him."
+
+    Here, NLTK identified the term "movelessness" as a verb, while stanford
+    once again correctly identified it as a singular noun.
+
+3.  "One Eye scooped out (mouthfuls) of the blood-soaked snow, and chewed and
+     tasted and swallowed."
+
+    NLTK identified the term "mouthfuls" as a singular noun, while stanford
+    identified it as a plural noun. According to thefreedictionary.com, both
+    interpretations can be correct depending on whether we are using the
+    standard of British English or American English.
+
+4.  "Lip-lip continued so to darken his days that White Fang became (wickeder)
+     and more ferocious than it was his natural right to be."
+
+    NLTK identified the term "wickeder" as an adjective while stanford
+    correctly identified it as a singular noun.
+
+5.  "He walked less softly among the grown dogs; his
+     attitude toward them was less (compromising)."
+
+    Stanford correctly identified the term "compromising" as a noun while
+    NLTK identified it as a gerund.
+
+6.  "White Fang, bristling silently, (half-crouching) as he rose, sank back and
+     watched the hostile act repeated."
+
+    NLTK identified it as an adjective, while Stanford identified it as a
+    singular noun. I'm not too sure which one is correct, but I would guess
+    that neither is correct here.
+
+7.  "(Tormented), incited to hate, he was kept a prisoner so that there 
+     was no way of satisfying that hate except at the times his master 
+     saw fit to put another dog against him."
+
+    NLTK identified this one as a past participle, while stanford identified it
+    as proper noun. This is a case where NLTK was able to successfully identify
+    it.
+
+CONCLUSION:
+To conclude, more often than not, Stanford was able to more accurately 
+tag the word than NLTK. It seems that NLTK has trouble has trouble tagging 
+"decorated" nouns, or nouns that end in "ing", "ed", have some form of
+punctuation like hyphens in it, etc. Stanford, on the other hand, is generally
+accurate, but occasionally messes up when you give it capital words or long
+sentences before/after the word.

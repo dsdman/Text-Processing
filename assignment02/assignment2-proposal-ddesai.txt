@@ -1,0 +1,20 @@
+Dylan Desai
+CSCE 578 Assignment 2 Proposal
+
+After weighing all the options, Option Four has the most potential to me. More specifially, I will be 
+looking at two POS taggers, NLTK and Stanford, and after running each of them on the same data set, will observe 
+the differences between them. The goal is to understand how each POS tagger tags words differently and to maybe
+figure out how each of these programs could be improved.
+
+The procedure would likely involve running each of the POS taggers on the same large set of data (maybe COCA or similar) 
+and dump the output of each of them into individual files. Next, I will go through each word one by one (maybe after-
+alphebetically sorting them for clarity) and see how each tagger has tagged it. For example, maybe NLTK has tagged
+some word as a noun while Stanford has tagged the same word as a verb. Each word with a differing tag will be
+written in an output file, which will contain the list of words, the POS that Stanford tagged it, and the POS that
+NLTK tagged it.
+
+The analysis will focus on any significant differences observed between the taggers. I will do this by hand,
+singling out notable words/phrases with different POS taggings. From these,I will be able to see which of these POS 
+taggers were able to successfully tag the word (or maybe neither), see which one was closer in the actual POS if
+neither, and maybe offer insight as to how each POS tagger could be improved, cases in which one tagger is 
+preferable to the other, etc.

@@ -1,0 +1,29 @@
+Dylan Desai
+CSCE 578
+
+INTRODUCTION:
+As per the proposal, the Goal of this program is to compare part of speech tags between the
+stanford parser and the NLTK parser. This was done by running the simple stanford POS tagger
+(with the english-left3words-distsim tagger) and the NLTK tagger (with the averaged_perceptron_tagger)
+on Jack London's White Fang and singling out differently tagged words.
+
+METHODOLOGY:
+First, the Stanford parser was run using the simple POS (english-left3words-distsim) tagger
+on Jack London's White Fang and the output was stored in 'data/stanford.txt'. Next, the
+NLTK POS tagger (averaged_perceptron_tagger) was run on the same text, and the output
+was formatted to look like Stanford's output ('word'_'pos'). This was done in the 
+'parse.py' program, and output was stored in 'data/nltk.txt'.
+
+The following procedure is used by the main program ('main.py'):
+1. Read 'data/stanford.txt' and make a map of word key to part of speech value.
+2. Same as 1 but for 'data/nltk.txt'
+3. To do the word comparisons, filter down to words that both maps had in common by
+   treating each list of keys (words) as sets and taking the intersection. Then
+   for each word with a different part of speech, store in a list of tuples containing
+   the word, how Stanford tagged it, and how NLTK tagged it.
+4. Write the output of '3' (list of tuples) in a file called 'results.txt', simplifying
+   the formatting to be more readable.
+
+RESULTS:
+The differently tagged words are stored in 'results.txt'. See 'Analysis.txt' for more details
+regarding this project.

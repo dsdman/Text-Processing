@@ -1,0 +1,27 @@
+Dylan Desai
+CSCE 578
+
+INTRODUCTION:
+This is a program that analyzes student essay data and generates clusters of topics based on
+their contents. This was done by calculating the TF-IDF (Term frequency and Inverse Document Frequency)
+and then running a kmeans algorithm on the resulting matrix to generate clusters based on centroids.
+The algorithm is run several times until the centroids converge towards an optimal solution.
+
+METHODOLOGY:
+In order to prepare the dataset, all other data except the 2014 student data (last folder) was removed.
+Then, all drafts were removed from the dataset. The dataset was then stored in './data/Datastudent'
+
+The following procedure is used by the main program ('main.py'):
+1. Get the list of documents in the corpus by reading from the files.
+   strip punctuation from each line, then add each word was to
+   the document (represented as a string), and then each document to the corpus.
+2. Vectorize the data by calculating the tf-idf for each term (feature) in the document.
+   scikit-learn was used to assist in this.
+3. Run kmeans (scikit-learn) to generate clusters. For the model to be accurate, experiment with
+   different number of clusters, centroid orders, and iterations of the algorithm until results
+   are optimal. For this data set, 5 clusters with 15 features were generated after running kmeans
+   through 100 iterations.
+4. Write the output of '3' (list of features in each cluster) in a file called 'results.txt'.
+
+RESULTS:
+The five clusters are stored in 'results.txt'. See 'Analysis.txt' for more details.

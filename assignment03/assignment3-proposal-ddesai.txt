@@ -1,0 +1,14 @@
+Dylan Desai
+CSCE 578 Assignment 3 Proposal
+
+Out of all the options, I think option one has the most potential for me.
+Trying to cluster or categorize the student papers looks to be a 
+interesting and challenging task. In order to do this, I will have to run 
+tf-idf on the papers, vectorize them (after normalizing), and then do a metric like cosine 
+similarity in order to attempt to group them. I will then look at the variance
+of this metric and use that to group them into categories. I may do parts of this
+project from scratch instead of libraries, as I've learned from project 2
+that some of these libraries may be less reliable than others. I may then verify 
+the result using a library that has TF-IDF built in. The analysis will likely 
+involve me looking at the clusters that the program calculated from the student papers
+and seeing how accurate they are.
